@@ -15,27 +15,6 @@ env/
 .venv/
 
 # =============================================
-# Dataset HASY (demasiado grande para Git)
-# =============================================
-hasy-data/
-hasy-data-labels.csv
-
-# =============================================
-# Tareas de clasificación y verificación
-# =============================================
-classification-task/
-verification-task/
-
-# =============================================
-# Modelo entrenado (archivo binario pesado)
-# =============================================
-*.keras
-*.h5
-*.hdf5
-*.tflite
-*.onnx
-
-# =============================================
 # macOS
 # =============================================
 .DS_Store
