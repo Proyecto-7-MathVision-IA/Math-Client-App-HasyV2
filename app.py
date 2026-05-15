@@ -190,6 +190,14 @@ LATEX_UNICODE: dict = {
     r"\mathbb{R}":"ℝ", r"\mathbb{N}":"ℕ", r"\mathbb{Z}":"ℤ",
     r"\mathbb{Q}":"ℚ", r"\mathbb{C}":"ℂ",
     r"\mathbb{b}":"𝕓", r"\mathbb{0}":"𝟘", r"\mathbb{1}":"𝟙",
+    # Mathds (double-struck / blackboard bold)
+    r"\mathds{1}":"𝟙", r"\mathds{C}":"ℂ", r"\mathds{E}":"𝔼",
+    r"\mathds{N}":"ℕ", r"\mathds{P}":"ℙ", r"\mathds{Q}":"ℚ",
+    r"\mathds{R}":"ℝ", r"\mathds{Z}":"ℤ",
+    # Mathscr (script)
+    r"\mathscr{A}":"𝒜", r"\mathscr{C}":"𝒞", r"\mathscr{D}":"𝒟",
+    r"\mathscr{E}":"ℰ", r"\mathscr{F}":"ℱ", r"\mathscr{H}":"ℋ",
+    r"\mathscr{L}":"ℒ", r"\mathscr{P}":"𝒫", r"\mathscr{S}":"𝒮",
     # Mathcal
     r"\mathcal{A}":"𝒜", r"\mathcal{B}":"ℬ", r"\mathcal{C}":"𝒞",
     r"\mathcal{D}":"𝒟", r"\mathcal{E}":"ℰ", r"\mathcal{F}":"ℱ",
@@ -224,12 +232,41 @@ LATEX_UNICODE: dict = {
     # Astronomy / misc
     r"\venus":"♀", r"\mars":"♂", r"\sun":"☉", r"\moon":"☽",
     r"\male":"♂", r"\female":"♀",
+    r"\astrosun":"☉", r"\fullmoon":"○", r"\leftmoon":"☽",
     r"\backslash":"\\", r"\diameter":"⌀",
     r"\celsius":"℃", r"\ohm":"Ω", r"\degree":"°",
     r"\guillemotleft":"«", r"\guillemotright":"»",
     r"\AE":"Æ", r"\ae":"æ", r"\OE":"Œ", r"\oe":"œ",
     r"\aa":"å", r"\AA":"Å",
     r"\checked":"✓",
+    r"\Im":"ℑ", r"\Re":"ℜ",
+    r"\O":"Ø", r"\o":"ø",
+    r"\L":"Ł", r"\l":"ł",
+    r"\ss":"ß",
+    # Extra arrows
+    r"\rightharpoonup":"⇀", r"\leadsto":"⇝",
+    r"\circlearrowleft":"↺", r"\circlearrowright":"↻",
+    r"\rightleftarrows":"⇄", r"\rightrightarrows":"⇉",
+    r"\mapsfrom":"↤", r"\shortrightarrow":"→",
+    r"\lightning":"↯",
+    # Extra math / relations
+    r"\mathbb{H}":"ℍ",
+    r"\Bowtie":"⋈", r"\vartriangle":"△",
+    r"\iddots":"⋰",
+    # Double brackets
+    r"\llbracket":"⟦", r"\rrbracket":"⟧",
+    # Dots
+    r"\dotsc":"…",
+    # Greek
+    r"\varpi":"ϖ",
+    # Extra arrows
+    r"\curvearrowright":"↷",
+    # Extra relations
+    r"\triangleq":"≜",
+    r"\leqslant":"⩽", r"\geqslant":"⩾",
+    r"\nmid":"∤",
+    r"\nvDash":"⊭", r"\nsubseteq":"⊈",
+    r"\subsetneq":"⊊", r"\varsubsetneq":"⊊",
     # Logical / misc
     r"\neg":"¬", r"\lnot":"¬",
     r"\vee":"∨", r"\lor":"∨", r"\wedge":"∧", r"\land":"∧",
