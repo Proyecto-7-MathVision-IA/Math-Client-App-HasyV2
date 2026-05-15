@@ -25,325 +25,21 @@ st.set_page_config(
     layout="wide",
 )
 
-# ── CSS global ────────────────────────────────────────────────────────────────
-st.markdown("""
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap');
+# ── CSS global (cargado desde styles.css) ────────────────────────────────────
+def _inject_css():
+    css_path = os.path.join(BASE_DIR, "styles.css")
+    with open(css_path, "r", encoding="utf-8") as f:
+        css = f.read()
+    st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+_inject_css()
 
-:root {
-  --bg:         #080C14;
-  --bg2:        #0D1421;
-  --surface:    #111827;
-  --surface2:   #1A2332;
-  --border:     #1E2D42;
-  --border2:    #243347;
-  --fg:         #F0F4FF;
-  --fg2:        #94A3B8;
-  --fg3:        #475569;
-  --fg4:        #334155;
-  --accent:     #6366F1;
-  --accent2:    #818CF8;
-  --accent-bg:  rgba(99,102,241,0.10);
-  --green:      #10B981;
-  --green-bg:   rgba(16,185,129,0.12);
-  --amber:      #F59E0B;
-  --amber-bg:   rgba(245,158,11,0.12);
-  --radius:     16px;
-  --radius-sm:  10px;
-  --radius-xs:  7px;
-}
-
-html, body, .stApp {
-  background: var(--bg) !important;
-  font-family: 'Inter', system-ui, sans-serif;
-  color: var(--fg);
-}
-
-/* ── Ocultar chrome de Streamlit ── */
-header[data-testid="stHeader"],
-#MainMenu, footer,
-[data-testid="stToolbar"] { display: none !important; }
-
-/* Quitar el padding-top de 96px que Streamlit añade al block container */
-[data-testid="stMainBlockContainer"] {
-  padding: 0 !important;
-  max-width: 100% !important;
-}
-/* Fallback por si el testid cambia */
-section.main > div.block-container {
-  padding: 0 !important;
-  max-width: 100% !important;
-}
-
-/* ── TOPBAR ── */
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1.5rem;
-  background: var(--bg2);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.topbar-brand { display: flex; align-items: center; gap: 10px; }
-.brand-icon {
-  width: 32px; height: 32px;
-  background: var(--accent);
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 600; font-size: 14px; color: #fff;
-  flex-shrink: 0;
-}
-.brand-name { font-size: 13px; font-weight: 600; color: var(--fg); letter-spacing: -0.01em; }
-.brand-sub  { font-size: 10px; color: var(--fg3); font-weight: 400; }
-.topbar-pills { display: flex; gap: 6px; }
-.pill {
-  padding: 3px 10px; border-radius: 9999px;
-  font-size: 10px; font-weight: 600; border: 0.5px solid;
-  letter-spacing: 0.02em;
-}
-.pill-accent { background: var(--accent-bg); color: var(--accent2); border-color: rgba(99,102,241,0.3); }
-.pill-mono   { background: var(--surface); color: var(--fg3); border-color: var(--border2);
-               font-family: 'JetBrains Mono', monospace; }
-
-/* ── PANEL HEADER: st.columns row estilizado como header via :has() ── */
-div[data-testid="stHorizontalBlock"]:has(#hdr-title-marker) {
-  background: var(--bg2) !important;
-  border-bottom: 1px solid var(--border) !important;
-  padding: 0.5rem 1rem !important;
-  margin: 0 !important;
-  gap: 8px !important;
-  align-items: center !important;
-}
-div[data-testid="stHorizontalBlock"]:has(#hdr-title-marker)
-  > div[data-testid="stColumn"] {
-  padding: 0 !important;
-  min-width: 0 !important;
-}
-.panel-hdr-title {
-  font-size: 10px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.09em;
-  color: var(--fg3);
-  margin: 0 !important; padding: 0 !important;
-  line-height: 30px;
-  white-space: nowrap;
-}
-
-/* ── CANVAS AREA ── */
-.canvas-wrap {
-  display: flex; align-items: center; justify-content: center;
-  padding: 1.25rem;
-}
-
-/* Canvas: usar la clase Streamlit exacta para recortar zona blanca */
-[class*="st-key-canvas"] {
-  width: 280px !important;
-  height: 284px !important;
-  overflow: hidden !important;
-  border-radius: var(--radius-sm) !important;
-  box-shadow: none !important;
-  background-color: #000 !important;
-  margin: 1rem auto !important;
-  display: block !important;
-}
-[class*="st-key-canvas"] > div {
-  width: 280px !important;
-  height: 284px !important;
-  overflow: hidden !important;
-}
-[class*="st-key-canvas"] iframe {
-  display: block !important;
-  width: 280px !important;
-  height: 284px !important;
-  border: none !important;
-}
-/* Centrar el canvas en el flujo de la columna */
-div[data-testid="element-container"]:has([class*="st-key-canvas"]) {
-  display: flex !important;
-  justify-content: center !important;
-}
-
-/* ── CANVAS FOOTER ── */
-.canvas-footer {
-  padding: 0.75rem 1rem 1rem;
-  border-top: 1px solid var(--border);
-}
-.canvas-hint {
-  font-size: 11px; color: var(--fg4);
-  text-align: center; line-height: 1.6; margin-bottom: 10px;
-}
-.canvas-hint strong { color: var(--fg3); font-weight: 500; }
-
-.stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
-.stat-card {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--radius-xs); padding: 8px 6px; text-align: center;
-}
-.stat-val { font-size: 13px; font-weight: 600; color: var(--accent2); font-family: 'JetBrains Mono', monospace; }
-.stat-lbl { font-size: 9px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--fg4); margin-top: 2px; }
-
-/* ── RESULTADO HERO ── */
-.section-title {
-  font-size: 10px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.09em;
-  color: var(--fg3); margin-bottom: 10px;
-}
-
-.result-hero {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 1rem;
-  display: flex; align-items: center; gap: 12px;
-}
-.sym-box {
-  width: 68px; height: 68px; flex-shrink: 0;
-  background: var(--accent-bg);
-  border: 1px solid rgba(99,102,241,0.2);
-  border-radius: 9px;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 4px;
-  overflow: hidden;
-}
-.sym-glyph { font-size: 26px; color: var(--fg); }
-.sym-latex { font-size: 9px; color: var(--fg4); font-family: 'JetBrains Mono', monospace;
-             overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 64px; }
-
-.result-info { flex: 1; min-width: 0; }
-.result-name {
-  font-size: 22px; font-weight: 600; color: var(--fg);
-  font-family: 'JetBrains Mono', monospace;
-  letter-spacing: -0.02em; margin-bottom: 6px;
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-}
-.conf-row { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
-.conf-badge {
-  font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 9999px;
-}
-.conf-high { background: var(--green-bg); color: var(--green); border: 0.5px solid rgba(16,185,129,0.3); }
-.conf-mid  { background: var(--accent-bg); color: var(--accent2); border: 0.5px solid rgba(99,102,241,0.3); }
-.conf-low  { background: var(--amber-bg); color: var(--amber); border: 0.5px solid rgba(245,158,11,0.3); }
-.conf-pct  { font-size: 13px; font-weight: 600; color: var(--fg2); font-family: 'JetBrains Mono', monospace; }
-.bar-track { height: 4px; background: var(--border2); border-radius: 9999px; overflow: hidden; }
-.bar-fill  { height: 100%; border-radius: 9999px; transition: width 0.4s cubic-bezier(0.4,0,0.2,1); }
-
-/* ── TOP-K ── */
-.topk-list { display: flex; flex-direction: column; }
-.topk-row {
-  display: grid;
-  grid-template-columns: 18px minmax(0, 3.5rem) 1fr 3rem;
-  align-items: center; gap: 8px;
-  padding: 7px 0;
-  border-bottom: 0.5px solid var(--border);
-}
-.topk-row:last-child { border-bottom: none; }
-.tk-rank { font-size: 10px; color: var(--fg4); font-family: 'JetBrains Mono', monospace; text-align: right; }
-.tk-sym  { font-size: 13px; color: var(--fg2); font-family: 'JetBrains Mono', monospace;
-           overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.tk-sym.first { color: var(--accent2); }
-.tk-bar-bg { height: 4px; background: var(--border2); border-radius: 9999px; overflow: hidden; }
-.tk-bar    { height: 100%; border-radius: 9999px; }
-.tk-pct    { font-size: 10px; font-family: 'JetBrains Mono', monospace; color: var(--fg3); text-align: right; }
-
-/* ── EMPTY STATE ── */
-.empty {
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  min-height: 260px; gap: 10px;
-  color: var(--fg4); text-align: center;
-}
-.empty-icon {
-  width: 52px; height: 52px;
-  background: var(--surface2); border: 1px solid var(--border2);
-  border-radius: var(--radius-xs);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px; color: var(--fg3);
-}
-.empty p    { font-size: 13px; color: var(--fg2); }
-.empty span { font-size: 11px; color: var(--fg4); }
-
-/* ── BOTONES UNDO/TRASH ── */
-div[data-testid="stHorizontalBlock"]:has(#hdr-title-marker) button {
-  background: var(--surface2) !important;
-  border: 1px solid var(--border2) !important;
-  color: var(--fg3) !important;
-  border-radius: 7px !important;
-  width: 30px !important; height: 30px !important;
-  min-width: 30px !important;
-  padding: 0 !important;
-  font-size: 1.1rem !important;
-  display: flex !important;
-  align-items: center !important; justify-content: center !important;
-  transition: all 0.15s !important;
-}
-div[data-testid="stHorizontalBlock"]:has(#hdr-title-marker) button:hover {
-  border-color: var(--accent) !important;
-  background: var(--accent-bg) !important;
-  color: var(--accent2) !important;
-}
-div[data-testid="stHorizontalBlock"]:has(#hdr-title-marker) button:active {
-  transform: scale(0.93) !important;
-}
-
-/* ── Streamlit columns gap reset ── */
-div[data-testid="stHorizontalBlock"] {
-  gap: 6px !important;
-  align-items: center !important;
-}
-div[data-testid="column"] {
-  padding: 0 !important;
-}
-
-/* ── Columnas externas: fondo y separador ── */
-section.main > div.block-container
-  > div > div > div[data-testid="stHorizontalBlock"]
-  > div[data-testid="stColumn"]:first-child {
-  background: var(--surface) !important;
-  border-right: 1px solid var(--border) !important;
-  padding: 0 !important;
-}
-section.main > div.block-container
-  > div > div > div[data-testid="stHorizontalBlock"]
-  > div[data-testid="stColumn"]:last-child {
-  background: var(--bg) !important;
-  padding: 1.25rem 1.5rem !important;
-}
-
-/* ── RESPONSIVE MÓVIL ── */
-@media (max-width: 768px) {
-  /* Colapsar SOLO el stHorizontalBlock de las columnas principales */
-  [data-testid="stHorizontalBlock"].st-emotion-cache-r3ry0f,
-  [data-testid="stHorizontalBlock"]:not(:has([id="hdr-title-marker"])) {
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-  }
-  [data-testid="stHorizontalBlock"].st-emotion-cache-r3ry0f
-    > [data-testid="stColumn"],
-  [data-testid="stHorizontalBlock"]:not(:has([id="hdr-title-marker"]))
-    > [data-testid="stColumn"] {
-    width: 100% !important;
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    border-right: none !important;
-  }
-  /* Topbar compacto */
-  .topbar-pills .pill-mono { display: none; }
-  .topbar { padding: 0.6rem 1rem; }
-}
-</style>
-""", unsafe_allow_html=True)
-
-# ── KaTeX ─────────────────────────────────────────────────────────────────────
+# ── KaTeX (CDN) ───────────────────────────────────────────────────────────────
 st.markdown("""
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
-<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
 """, unsafe_allow_html=True)
+
 
 # ── Resources ─────────────────────────────────────────────────────────────────
 @st.cache_resource
@@ -362,6 +58,8 @@ for key, val in [
     ("canvas_history", []),
     ("last_json", None),
     ("current_initial_drawing", None),
+    ("show_classes", False),
+    ("class_search", ""),
 ]:
     if key not in st.session_state:
         st.session_state[key] = val
@@ -392,23 +90,157 @@ def preprocess_canvas(img: np.ndarray):
     return (rsz.astype("float32") / 255.0).reshape(1, IMG_SIZE, IMG_SIZE, 1)
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
-def latex_to_display(latex: str) -> str:
-    simple = {
-        r"\sqrt{}": "√", r"\leftarrow": "←", r"\rightarrow": "→",
-        r"\alpha": "α", r"\beta": "β", r"\gamma": "γ", r"\delta": "δ",
-        r"\epsilon": "ε", r"\theta": "θ", r"\lambda": "λ", r"\mu": "μ",
-        r"\pi": "π", r"\sigma": "σ", r"\phi": "φ", r"\omega": "ω",
-        r"\Gamma": "Γ", r"\Delta": "Δ", r"\Sigma": "Σ", r"\Omega": "Ω",
-        r"\infty": "∞", r"\partial": "∂", r"\nabla": "∇",
-        r"\checkmark": "✓", r"\times": "×", r"\div": "÷",
-        r"\pm": "±", r"\leq": "≤", r"\geq": "≥", r"\neq": "≠",
-        r"\approx": "≈", r"\in": "∈", r"\subset": "⊂", r"\cup": "∪",
-        r"\cap": "∩", r"\forall": "∀", r"\exists": "∃",
-        r"\int": "∫", r"\sum": "∑", r"\prod": "∏",
-    }
-    return simple.get(latex, latex)
+LATEX_UNICODE: dict = {
+    # Greek lowercase
+    r"\alpha":"α", r"\beta":"β", r"\gamma":"γ", r"\delta":"δ",
+    r"\epsilon":"ε", r"\varepsilon":"ε", r"\zeta":"ζ", r"\eta":"η",
+    r"\theta":"θ", r"\vartheta":"ϑ", r"\iota":"ι", r"\kappa":"κ",
+    r"\varkappa":"ϰ", r"\lambda":"λ", r"\mu":"μ", r"\nu":"ν",
+    r"\xi":"ξ", r"\pi":"π", r"\rho":"ρ", r"\varrho":"ϱ",
+    r"\sigma":"σ", r"\varsigma":"ς", r"\tau":"τ",
+    r"\phi":"φ", r"\varphi":"φ", r"\chi":"χ", r"\psi":"ψ", r"\omega":"ω",
+    # Greek uppercase
+    r"\Gamma":"Γ", r"\Delta":"Δ", r"\Theta":"Θ", r"\Lambda":"Λ",
+    r"\Xi":"Ξ", r"\Pi":"Π", r"\Sigma":"Σ", r"\Phi":"Φ",
+    r"\Psi":"Ψ", r"\Omega":"Ω",
+    # Arrows
+    r"\rightarrow":"→", r"\leftarrow":"←", r"\uparrow":"↑", r"\downarrow":"↓",
+    r"\Rightarrow":"⇒", r"\Leftarrow":"⇐", r"\Uparrow":"⇑", r"\Downarrow":"⇓",
+    r"\leftrightarrow":"↔", r"\Leftrightarrow":"⇔",
+    r"\longrightarrow":"⟶", r"\longleftarrow":"⟵",
+    r"\Longrightarrow":"⟹", r"\Longleftarrow":"⟸",
+    r"\Longleftrightarrow":"⟺", r"\longleftrightarrow":"⟷",
+    r"\mapsto":"↦", r"\longmapsto":"⟼",
+    r"\nearrow":"↗", r"\searrow":"↘", r"\swarrow":"↙", r"\nwarrow":"↖",
+    r"\hookrightarrow":"↪", r"\hookleftarrow":"↩",
+    r"\twoheadrightarrow":"↠", r"\twoheadleftarrow":"↞",
+    r"\rightsquigarrow":"⇝", r"\leftrightharpoons":"⇋",
+    r"\rightleftharpoons":"⇌", r"\multimap":"⊸",
+    r"\nrightarrow":"↛", r"\nleftarrow":"↚",
+    r"\nRightarrow":"⇏", r"\nLeftarrow":"⇍",
+    r"\upharpoonright":"↾", r"\downharpoonright":"⇂",
+    # Large operators
+    r"\sum":"∑", r"\prod":"∏", r"\coprod":"∐",
+    r"\int":"∫", r"\oint":"∮", r"\iint":"∬", r"\iiint":"∭",
+    r"\oiint":"∯", r"\fint":"⨏", r"\varoiint":"∯",
+    r"\partial":"∂", r"\nabla":"∇",
+    # Binary operations
+    r"\times":"×", r"\div":"÷", r"\pm":"±", r"\mp":"∓",
+    r"\cdot":"·", r"\bullet":"•", r"\circ":"∘", r"\star":"⋆",
+    r"\ast":"∗", r"\oplus":"⊕", r"\ominus":"⊖", r"\otimes":"⊗",
+    r"\oslash":"⊘", r"\odot":"⊙", r"\circledcirc":"⊚",
+    r"\circledast":"⊛", r"\diamond":"⋄",
+    r"\triangleleft":"◁", r"\triangleright":"▷",
+    r"\cup":"∪", r"\cap":"∩", r"\sqcup":"⊔", r"\sqcap":"⊓",
+    r"\vee":"∨", r"\wedge":"∧", r"\setminus":"∖",
+    r"\uplus":"⊎", r"\amalg":"⨿",
+    r"\boxplus":"⊞", r"\boxminus":"⊟", r"\boxtimes":"⊠", r"\boxdot":"⊡",
+    r"\ltimes":"⋉", r"\rtimes":"⋊", r"\lhd":"⊲", r"\rhd":"⊳",
+    r"\wr":"≀", r"\barwedge":"⊼", r"\curlywedge":"⋏", r"\curlyvee":"⋎",
+    r"\parr":"⅋", r"\with":"&",
+    # Relations
+    r"\leq":"≤", r"\geq":"≥", r"\neq":"≠", r"\approx":"≈",
+    r"\equiv":"≡", r"\not\equiv":"≢", r"\sim":"∼", r"\simeq":"≃",
+    r"\cong":"≅", r"\propto":"∝", r"\varpropto":"∝",
+    r"\perp":"⊥", r"\parallel":"∥", r"\mid":"∣",
+    r"\subset":"⊂", r"\supset":"⊃", r"\subseteq":"⊆", r"\supseteq":"⊇",
+    r"\sqsubset":"⊏", r"\sqsupset":"⊐",
+    r"\sqsubseteq":"⊑", r"\sqsupseteq":"⊒",
+    r"\in":"∈", r"\notin":"∉", r"\ni":"∋",
+    r"\prec":"≺", r"\succ":"≻", r"\preceq":"⪯", r"\succeq":"⪰",
+    r"\preccurlyeq":"≼", r"\succcurlyeq":"≽",
+    r"\ll":"≪", r"\gg":"≫",
+    r"\asymp":"≍", r"\bowtie":"⋈", r"\smile":"⌣", r"\frown":"⌢",
+    r"\vdash":"⊢", r"\dashv":"⊣", r"\models":"⊨",
+    r"\Vdash":"⊩", r"\vDash":"⊨",
+    r"\doteq":"≐", r"\backsim":"∽", r"\pitchfork":"⋔",
+    r"\between":"≬", r"\therefore":"∴", r"\because":"∵",
+    r"\lesssim":"≲", r"\gtrsim":"≳",
+    r"\lessgtr":"≶", r"\gtrless":"≷",
+    r"\trianglelefteq":"⊴", r"\trianglerighteq":"⊵",
+    r"\eqslantless":"⪕", r"\eqslantgtr":"⪖",
+    r"\lesseqqgtr":"⪋", r"\gtreqqless":"⪌",
+    # Misc math
+    r"\infty":"∞", r"\forall":"∀", r"\exists":"∃", r"\nexists":"∄",
+    r"\checkmark":"✓", r"\top":"⊤", r"\bot":"⊥",
+    r"\angle":"∠", r"\measuredangle":"∡", r"\sphericalangle":"∢",
+    r"\triangle":"△", r"\square":"□", r"\blacksquare":"■",
+    r"\lozenge":"◊", r"\blacklozenge":"⧫",
+    r"\blacktriangle":"▲", r"\blacktriangledown":"▼",
+    r"\blacktriangleleft":"◀", r"\blacktriangleright":"▶",
+    r"\triangledown":"▽",
+    r"\aleph":"ℵ", r"\hbar":"ℏ", r"\ell":"ℓ", r"\wp":"℘",
+    r"\emptyset":"∅", r"\varnothing":"∅",
+    r"\dots":"…", r"\ldots":"…", r"\cdots":"⋯", r"\vdots":"⋮", r"\ddots":"⋱",
+    r"\prime":"′",
+    r"\heartsuit":"♡", r"\diamondsuit":"♢", r"\clubsuit":"♣", r"\spadesuit":"♠",
+    r"\flat":"♭", r"\sharp":"♯", r"\natural":"♮",
+    r"\sqrt{}":"√",
+    # Special chars
+    r"\$":"$", r"\{":"{", r"\}":"}", r"\#":"#", r"\%":"%",
+    r"\&":"&", r"\S":"§", r"\dag":"†", r"\ddag":"‡",
+    r"\pounds":"£", r"\copyright":"©", r"\circledR":"®",
+    r"\mathsection":"§",
+    # Brackets
+    r"\langle":"⟨", r"\rangle":"⟩",
+    r"\lceil":"⌈", r"\rceil":"⌉", r"\lfloor":"⌊", r"\rfloor":"⌋",
+    r"\lbracket":"[", r"\rbracket":"]",
+    r"\lvert":"|", r"\rvert":"|", r"\lVert":"‖", r"\rVert":"‖",
+    # Mathbb
+    r"\mathbb{R}":"ℝ", r"\mathbb{N}":"ℕ", r"\mathbb{Z}":"ℤ",
+    r"\mathbb{Q}":"ℚ", r"\mathbb{C}":"ℂ",
+    r"\mathbb{b}":"𝕓", r"\mathbb{0}":"𝟘", r"\mathbb{1}":"𝟙",
+    # Mathcal
+    r"\mathcal{A}":"𝒜", r"\mathcal{B}":"ℬ", r"\mathcal{C}":"𝒞",
+    r"\mathcal{D}":"𝒟", r"\mathcal{E}":"ℰ", r"\mathcal{F}":"ℱ",
+    r"\mathcal{G}":"𝒢", r"\mathcal{H}":"ℋ", r"\mathcal{I}":"ℐ",
+    r"\mathcal{J}":"𝒥", r"\mathcal{K}":"𝒦", r"\mathcal{L}":"ℒ",
+    r"\mathcal{M}":"ℳ", r"\mathcal{N}":"𝒩", r"\mathcal{O}":"𝒪",
+    r"\mathcal{P}":"𝒫", r"\mathcal{Q}":"𝒬", r"\mathcal{R}":"ℛ",
+    r"\mathcal{S}":"𝒮", r"\mathcal{T}":"𝒯", r"\mathcal{U}":"𝒰",
+    r"\mathcal{V}":"𝒱", r"\mathcal{W}":"𝒲", r"\mathcal{X}":"𝒳",
+    r"\mathcal{Y}":"𝒴", r"\mathcal{Z}":"𝒵",
+    # Mathfrak
+    r"\mathfrak{A}":"𝔄", r"\mathfrak{B}":"𝔅", r"\mathfrak{C}":"ℭ",
+    r"\mathfrak{D}":"𝔇", r"\mathfrak{E}":"𝔈", r"\mathfrak{F}":"𝔉",
+    r"\mathfrak{G}":"𝔊", r"\mathfrak{H}":"ℌ", r"\mathfrak{I}":"ℑ",
+    r"\mathfrak{J}":"𝔍", r"\mathfrak{K}":"𝔎", r"\mathfrak{L}":"𝔏",
+    r"\mathfrak{M}":"𝔐", r"\mathfrak{N}":"𝔑", r"\mathfrak{O}":"𝔒",
+    r"\mathfrak{P}":"𝔓", r"\mathfrak{Q}":"𝔔", r"\mathfrak{R}":"ℜ",
+    r"\mathfrak{S}":"𝔖", r"\mathfrak{T}":"𝔗", r"\mathfrak{U}":"𝔘",
+    r"\mathfrak{V}":"𝔙", r"\mathfrak{W}":"𝔚", r"\mathfrak{X}":"𝔛",
+    r"\mathfrak{Y}":"𝔜", r"\mathfrak{Z}":"ℨ",
+    r"\mathfrak{a}":"𝔞", r"\mathfrak{b}":"𝔟", r"\mathfrak{c}":"𝔠",
+    r"\mathfrak{d}":"𝔡", r"\mathfrak{e}":"𝔢", r"\mathfrak{f}":"𝔣",
+    r"\mathfrak{g}":"𝔤", r"\mathfrak{h}":"𝔥", r"\mathfrak{i}":"𝔦",
+    r"\mathfrak{j}":"𝔧", r"\mathfrak{k}":"𝔨", r"\mathfrak{l}":"𝔩",
+    r"\mathfrak{m}":"𝔪", r"\mathfrak{n}":"𝔫", r"\mathfrak{o}":"𝔬",
+    r"\mathfrak{p}":"𝔭", r"\mathfrak{q}":"𝔮", r"\mathfrak{r}":"𝔯",
+    r"\mathfrak{s}":"𝔰", r"\mathfrak{t}":"𝔱", r"\mathfrak{u}":"𝔲",
+    r"\mathfrak{v}":"𝔳", r"\mathfrak{w}":"𝔴", r"\mathfrak{x}":"𝔵",
+    r"\mathfrak{y}":"𝔶", r"\mathfrak{z}":"𝔷",
+    # Mathbb lowercase/digits
+    r"\mathbb{a}":"𝕒", r"\mathbb{b}":"𝕓", r"\mathbb{c}":"𝕔",
+    # Astronomy / misc
+    r"\venus":"♀", r"\mars":"♂", r"\sun":"☉", r"\moon":"☽",
+    r"\male":"♂", r"\female":"♀",
+    r"\backslash":"\\", r"\diameter":"⌀",
+    r"\celsius":"℃", r"\ohm":"Ω", r"\degree":"°",
+    r"\guillemotleft":"«", r"\guillemotright":"»",
+    r"\AE":"Æ", r"\ae":"æ", r"\OE":"Œ", r"\oe":"œ",
+    r"\aa":"å", r"\AA":"Å",
+    r"\checked":"✓",
+    # Logical / misc
+    r"\neg":"¬", r"\lnot":"¬",
+    r"\vee":"∨", r"\lor":"∨", r"\wedge":"∧", r"\land":"∧",
+    r"\oplus":"⊕", r"\bigoplus":"⊕",
+    r"\Browseq": "?",
+}
 
-# ── TOPBAR (único st.markdown autocontenido) ───────────────────────────────────
+def latex_to_display(latex: str) -> str:
+    return LATEX_UNICODE.get(latex, latex)
+
+# ── TOPBAR ───────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="topbar">
   <div class="topbar-brand">
@@ -419,12 +251,186 @@ st.markdown("""
     </div>
   </div>
   <div class="topbar-pills">
-    <span class="pill pill-accent">369 clases</span>
     <span class="pill pill-mono">CNN · 32×32</span>
     <span class="pill pill-mono">TensorFlow</span>
   </div>
 </div>
 """, unsafe_allow_html=True)
+
+# Botón "369 clases" dentro del topbar via CSS absolute positioning
+if st.button("📐 369 clases", key="btn_clases", help="Ver todas las clases disponibles"):
+    st.session_state.show_classes = not st.session_state.show_classes
+    st.rerun()
+
+# ── CLASSES VIEW ─────────────────────────────────────────────────────────────
+if st.session_state.show_classes:
+    # Auto-scroll to top of page when entering classes view
+    st.markdown("""
+    <script>
+    (function() {
+        function scrollTop() {
+            var main = window.parent.document.querySelector('section.main');
+            if (main) main.scrollTop = 0;
+            var body = window.parent.document.querySelector('[data-testid="stMainBlockContainer"]');
+            if (body) body.scrollTop = 0;
+            window.parent.scrollTo(0, 0);
+        }
+        scrollTop();
+        setTimeout(scrollTop, 100);
+    })();
+    </script>
+    """, unsafe_allow_html=True)
+    @st.cache_data
+    def load_class_map_full():
+        with open(CLASS_MAP_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    full_map = load_class_map_full()
+
+    # Header + botón volver en HTML puro (sin st.columns para no romper CSS)
+    st.markdown("""
+    <div class="classes-header">
+      <div>
+        <h2>📐 Todas las clases &middot; HASYv2</h2>
+        <p>El modelo CNN reconoce <strong style="color:var(--accent2)">369 símbolos matemáticos</strong> distintos</p>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    if st.button("← Volver al clasificador", key="btn_back"):
+        st.session_state.show_classes = False
+        st.rerun()
+
+    # Búsqueda
+    search_q = st.text_input("", placeholder="🔍  Buscar símbolo LaTeX...", key="class_search",
+                             label_visibility="collapsed")
+
+    # Filtrar
+    items = [(int(k), v["latex"]) for k, v in full_map.items()]
+    items.sort(key=lambda x: x[0])
+    if search_q:
+        items = [(idx, ltx) for idx, ltx in items if search_q.lower() in ltx.lower()]
+
+    # Grid: use Python LATEX_UNICODE dict — works for all 369 symbols without KaTeX
+    cards_html = []
+    for idx, ltx in items:
+        glyph = latex_to_display(ltx)
+        ltx_safe = ltx.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        glyph_safe = glyph.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        cards_html.append(
+            f'<div class="class-card">'
+            f'<span class="class-card-id">#{idx}</span>'
+            f'<span class="class-card-glyph">{glyph_safe}</span>'
+            f'<span class="class-card-latex">{ltx_safe}</span>'
+            f'</div>'
+        )
+
+    if not cards_html:
+        cards_html.append('<div class="classes-empty">No se encontraron clases.</div>')
+
+    n_items = len(items)
+    # Fixed viewport height: the grid scrolls inside the component
+    # Calculate a reasonable height: full viewport minus topbar (~56px) and controls (~110px)
+    initial_h = 700
+
+    component_html = f"""
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+<style>
+  :root {{
+    --bg: #080C14; --surface: #111827; --border: #1E2D42; --border2: #243347;
+    --surface2: #1A2332; --fg: #F0F4FF; --fg3: #475569; --fg4: #334155;
+    --accent: #6366F1; --accent-bg: rgba(99,102,241,0.10);
+    --radius-xs: 7px;
+  }}
+  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  html, body {{ height: 100%; }}
+  body {{ background: var(--bg); font-family: 'Inter', system-ui, sans-serif; padding: 0; margin: 0; overflow: hidden; }}
+  .scroll-container {{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.5rem 0 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #243347 #080C14;
+  }}
+  .scroll-container::-webkit-scrollbar {{ width: 6px; }}
+  .scroll-container::-webkit-scrollbar-track {{ background: #080C14; }}
+  .scroll-container::-webkit-scrollbar-thumb {{ background: #243347; border-radius: 3px; }}
+  .scroll-container::-webkit-scrollbar-thumb:hover {{ background: #6366F1; }}
+  .classes-grid {{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 8px;
+  }}
+  .class-card {{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xs);
+    padding: 10px 8px;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 5px;
+    transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  }}
+  .class-card:hover {{
+    border-color: var(--accent);
+    background: var(--surface2);
+    transform: translateY(-1px);
+  }}
+  .class-card-id {{
+    font-size: 9px; color: var(--fg4);
+    font-family: 'JetBrains Mono', monospace; line-height: 1;
+  }}
+  .class-card-glyph {{
+    font-size: 20px; color: var(--fg);
+    min-height: 28px;
+    display: flex; align-items: center; justify-content: center;
+  }}
+  .class-card-glyph .katex {{ font-size: 1.1em !important; color: var(--fg) !important; }}
+  .class-card-glyph .katex * {{ color: inherit !important; }}
+  .class-card-latex {{
+    font-size: 9px; color: var(--fg3);
+    font-family: 'JetBrains Mono', monospace;
+    text-align: center;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    max-width: 80px;
+  }}
+  .classes-empty {{
+    grid-column: 1/-1; text-align: center;
+    padding: 3rem; color: var(--fg4); font-size: 13px;
+  }}
+</style>
+</head>
+<body>
+<div class="scroll-container" id="scroll">
+  <div class="classes-grid" id="grid">
+  {"".join(cards_html)}
+  </div>
+</div>
+<script>
+// Set iframe height to fill remaining viewport
+function setHeight() {{
+  var viewportH = window.parent.innerHeight || 700;
+  var topbar = 56;   // topbar height
+  var controls = 115; // back button + search input
+  var h = Math.max(viewportH - topbar - controls, 400);
+  window.parent.postMessage({{isStreamlitMessage: true, type: 'streamlit:setFrameHeight', height: h}}, '*');
+  document.getElementById('scroll').style.height = h + 'px';
+}}
+setHeight();
+window.addEventListener('resize', setHeight);
+window.addEventListener('load', setHeight);
+</script>
+</body>
+</html>
+"""
+    import streamlit.components.v1 as components
+    components.html(component_html, height=initial_h, scrolling=False)
+    st.stop()
 
 # ── LAYOUT: st.columns es el único grid padre ─────────────────────────────────
 col_l, col_r = st.columns([4, 5], gap="large")
