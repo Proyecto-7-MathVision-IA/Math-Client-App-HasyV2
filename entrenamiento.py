@@ -42,8 +42,15 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TRAIN_CSV = os.path.join(BASE_DIR, "classification-task", "fold-1", "train.csv")
 TEST_CSV = os.path.join(BASE_DIR, "classification-task", "fold-1", "test.csv")
 SYMBOLS_CSV = os.path.join(BASE_DIR, "symbols.csv")
-MODEL_PATH = os.path.join(BASE_DIR, "modelo_hasy.keras")
-CLASS_MAP_PATH = os.path.join(BASE_DIR, "class_map.json")
+
+# Salida directa a las carpetas del frontend (donde app.py los espera)
+FRONTEND_DIR = os.path.join(BASE_DIR, "frontend")
+MODEL_PATH = os.path.join(FRONTEND_DIR, "keras", "modelo_hasy.keras")
+CLASS_MAP_PATH = os.path.join(FRONTEND_DIR, "maps", "class_map.json")
+
+# Crear directorios de salida si no existen
+os.makedirs(os.path.join(FRONTEND_DIR, "keras"), exist_ok=True)
+os.makedirs(os.path.join(FRONTEND_DIR, "maps"), exist_ok=True)
 
 
 # ──────────────────────────────────────────────────────────────────
