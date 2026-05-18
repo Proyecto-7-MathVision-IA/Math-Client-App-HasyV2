@@ -1,0 +1,1478 @@
+{
+  "0": {
+    "symbol_id": "31",
+    "latex": "A"
+  },
+  "1": {
+    "symbol_id": "32",
+    "latex": "B"
+  },
+  "2": {
+    "symbol_id": "33",
+    "latex": "C"
+  },
+  "3": {
+    "symbol_id": "34",
+    "latex": "D"
+  },
+  "4": {
+    "symbol_id": "35",
+    "latex": "E"
+  },
+  "5": {
+    "symbol_id": "36",
+    "latex": "F"
+  },
+  "6": {
+    "symbol_id": "37",
+    "latex": "G"
+  },
+  "7": {
+    "symbol_id": "38",
+    "latex": "H"
+  },
+  "8": {
+    "symbol_id": "39",
+    "latex": "I"
+  },
+  "9": {
+    "symbol_id": "40",
+    "latex": "J"
+  },
+  "10": {
+    "symbol_id": "41",
+    "latex": "K"
+  },
+  "11": {
+    "symbol_id": "42",
+    "latex": "L"
+  },
+  "12": {
+    "symbol_id": "43",
+    "latex": "M"
+  },
+  "13": {
+    "symbol_id": "44",
+    "latex": "N"
+  },
+  "14": {
+    "symbol_id": "45",
+    "latex": "O"
+  },
+  "15": {
+    "symbol_id": "46",
+    "latex": "P"
+  },
+  "16": {
+    "symbol_id": "47",
+    "latex": "Q"
+  },
+  "17": {
+    "symbol_id": "48",
+    "latex": "R"
+  },
+  "18": {
+    "symbol_id": "49",
+    "latex": "S"
+  },
+  "19": {
+    "symbol_id": "50",
+    "latex": "T"
+  },
+  "20": {
+    "symbol_id": "51",
+    "latex": "U"
+  },
+  "21": {
+    "symbol_id": "52",
+    "latex": "V"
+  },
+  "22": {
+    "symbol_id": "53",
+    "latex": "W"
+  },
+  "23": {
+    "symbol_id": "54",
+    "latex": "X"
+  },
+  "24": {
+    "symbol_id": "55",
+    "latex": "Y"
+  },
+  "25": {
+    "symbol_id": "56",
+    "latex": "Z"
+  },
+  "26": {
+    "symbol_id": "59",
+    "latex": "\\rightarrow"
+  },
+  "27": {
+    "symbol_id": "70",
+    "latex": "0"
+  },
+  "28": {
+    "symbol_id": "71",
+    "latex": "1"
+  },
+  "29": {
+    "symbol_id": "72",
+    "latex": "2"
+  },
+  "30": {
+    "symbol_id": "73",
+    "latex": "3"
+  },
+  "31": {
+    "symbol_id": "74",
+    "latex": "4"
+  },
+  "32": {
+    "symbol_id": "75",
+    "latex": "5"
+  },
+  "33": {
+    "symbol_id": "76",
+    "latex": "6"
+  },
+  "34": {
+    "symbol_id": "77",
+    "latex": "7"
+  },
+  "35": {
+    "symbol_id": "78",
+    "latex": "8"
+  },
+  "36": {
+    "symbol_id": "79",
+    "latex": "9"
+  },
+  "37": {
+    "symbol_id": "81",
+    "latex": "\\pi"
+  },
+  "38": {
+    "symbol_id": "82",
+    "latex": "\\alpha"
+  },
+  "39": {
+    "symbol_id": "87",
+    "latex": "\\beta"
+  },
+  "40": {
+    "symbol_id": "88",
+    "latex": "\\sum"
+  },
+  "41": {
+    "symbol_id": "89",
+    "latex": "\\sigma"
+  },
+  "42": {
+    "symbol_id": "90",
+    "latex": "a"
+  },
+  "43": {
+    "symbol_id": "91",
+    "latex": "b"
+  },
+  "44": {
+    "symbol_id": "92",
+    "latex": "c"
+  },
+  "45": {
+    "symbol_id": "93",
+    "latex": "d"
+  },
+  "46": {
+    "symbol_id": "94",
+    "latex": "e"
+  },
+  "47": {
+    "symbol_id": "95",
+    "latex": "f"
+  },
+  "48": {
+    "symbol_id": "96",
+    "latex": "g"
+  },
+  "49": {
+    "symbol_id": "97",
+    "latex": "h"
+  },
+  "50": {
+    "symbol_id": "98",
+    "latex": "i"
+  },
+  "51": {
+    "symbol_id": "99",
+    "latex": "j"
+  },
+  "52": {
+    "symbol_id": "100",
+    "latex": "k"
+  },
+  "53": {
+    "symbol_id": "101",
+    "latex": "l"
+  },
+  "54": {
+    "symbol_id": "102",
+    "latex": "m"
+  },
+  "55": {
+    "symbol_id": "103",
+    "latex": "n"
+  },
+  "56": {
+    "symbol_id": "104",
+    "latex": "o"
+  },
+  "57": {
+    "symbol_id": "105",
+    "latex": "p"
+  },
+  "58": {
+    "symbol_id": "106",
+    "latex": "q"
+  },
+  "59": {
+    "symbol_id": "107",
+    "latex": "r"
+  },
+  "60": {
+    "symbol_id": "108",
+    "latex": "s"
+  },
+  "61": {
+    "symbol_id": "110",
+    "latex": "u"
+  },
+  "62": {
+    "symbol_id": "111",
+    "latex": "v"
+  },
+  "63": {
+    "symbol_id": "112",
+    "latex": "w"
+  },
+  "64": {
+    "symbol_id": "113",
+    "latex": "x"
+  },
+  "65": {
+    "symbol_id": "114",
+    "latex": "y"
+  },
+  "66": {
+    "symbol_id": "115",
+    "latex": "z"
+  },
+  "67": {
+    "symbol_id": "116",
+    "latex": "\\Sigma"
+  },
+  "68": {
+    "symbol_id": "117",
+    "latex": "\\gamma"
+  },
+  "69": {
+    "symbol_id": "150",
+    "latex": "\\Gamma"
+  },
+  "70": {
+    "symbol_id": "151",
+    "latex": "\\delta"
+  },
+  "71": {
+    "symbol_id": "152",
+    "latex": "\\Delta"
+  },
+  "72": {
+    "symbol_id": "153",
+    "latex": "\\zeta"
+  },
+  "73": {
+    "symbol_id": "154",
+    "latex": "\\eta"
+  },
+  "74": {
+    "symbol_id": "155",
+    "latex": "\\theta"
+  },
+  "75": {
+    "symbol_id": "156",
+    "latex": "\\Theta"
+  },
+  "76": {
+    "symbol_id": "157",
+    "latex": "\\epsilon"
+  },
+  "77": {
+    "symbol_id": "158",
+    "latex": "\\varepsilon"
+  },
+  "78": {
+    "symbol_id": "159",
+    "latex": "\\iota"
+  },
+  "79": {
+    "symbol_id": "160",
+    "latex": "\\kappa"
+  },
+  "80": {
+    "symbol_id": "161",
+    "latex": "\\varkappa"
+  },
+  "81": {
+    "symbol_id": "162",
+    "latex": "\\lambda"
+  },
+  "82": {
+    "symbol_id": "163",
+    "latex": "\\Lambda"
+  },
+  "83": {
+    "symbol_id": "164",
+    "latex": "\\mu"
+  },
+  "84": {
+    "symbol_id": "165",
+    "latex": "\\nu"
+  },
+  "85": {
+    "symbol_id": "166",
+    "latex": "\\xi"
+  },
+  "86": {
+    "symbol_id": "167",
+    "latex": "\\Xi"
+  },
+  "87": {
+    "symbol_id": "168",
+    "latex": "\\Pi"
+  },
+  "88": {
+    "symbol_id": "169",
+    "latex": "\\rho"
+  },
+  "89": {
+    "symbol_id": "170",
+    "latex": "\\varrho"
+  },
+  "90": {
+    "symbol_id": "171",
+    "latex": "\\tau"
+  },
+  "91": {
+    "symbol_id": "174",
+    "latex": "\\phi"
+  },
+  "92": {
+    "symbol_id": "175",
+    "latex": "\\Phi"
+  },
+  "93": {
+    "symbol_id": "176",
+    "latex": "\\varphi"
+  },
+  "94": {
+    "symbol_id": "177",
+    "latex": "\\chi"
+  },
+  "95": {
+    "symbol_id": "178",
+    "latex": "\\psi"
+  },
+  "96": {
+    "symbol_id": "179",
+    "latex": "\\Psi"
+  },
+  "97": {
+    "symbol_id": "180",
+    "latex": "\\omega"
+  },
+  "98": {
+    "symbol_id": "181",
+    "latex": "\\Omega"
+  },
+  "99": {
+    "symbol_id": "182",
+    "latex": "\\partial"
+  },
+  "100": {
+    "symbol_id": "183",
+    "latex": "\\int"
+  },
+  "101": {
+    "symbol_id": "184",
+    "latex": "\\cdot"
+  },
+  "102": {
+    "symbol_id": "185",
+    "latex": "\\leq"
+  },
+  "103": {
+    "symbol_id": "186",
+    "latex": "\\geq"
+  },
+  "104": {
+    "symbol_id": "187",
+    "latex": "<"
+  },
+  "105": {
+    "symbol_id": "188",
+    "latex": ">"
+  },
+  "106": {
+    "symbol_id": "189",
+    "latex": "\\subset"
+  },
+  "107": {
+    "symbol_id": "190",
+    "latex": "\\supset"
+  },
+  "108": {
+    "symbol_id": "191",
+    "latex": "\\subseteq"
+  },
+  "109": {
+    "symbol_id": "192",
+    "latex": "\\supseteq"
+  },
+  "110": {
+    "symbol_id": "193",
+    "latex": "\\cong"
+  },
+  "111": {
+    "symbol_id": "194",
+    "latex": "\\propto"
+  },
+  "112": {
+    "symbol_id": "195",
+    "latex": "-"
+  },
+  "113": {
+    "symbol_id": "196",
+    "latex": "+"
+  },
+  "114": {
+    "symbol_id": "197",
+    "latex": "\\mathbb{R}"
+  },
+  "115": {
+    "symbol_id": "254",
+    "latex": "\\$"
+  },
+  "116": {
+    "symbol_id": "257",
+    "latex": "\\{"
+  },
+  "117": {
+    "symbol_id": "259",
+    "latex": "\\copyright"
+  },
+  "118": {
+    "symbol_id": "260",
+    "latex": "\\dots"
+  },
+  "119": {
+    "symbol_id": "261",
+    "latex": "\\}"
+  },
+  "120": {
+    "symbol_id": "262",
+    "latex": "\\S"
+  },
+  "121": {
+    "symbol_id": "263",
+    "latex": "\\dag"
+  },
+  "122": {
+    "symbol_id": "264",
+    "latex": "\\pounds"
+  },
+  "123": {
+    "symbol_id": "265",
+    "latex": "\\&"
+  },
+  "124": {
+    "symbol_id": "266",
+    "latex": "\\#"
+  },
+  "125": {
+    "symbol_id": "267",
+    "latex": "\\%"
+  },
+  "126": {
+    "symbol_id": "268",
+    "latex": "\\checkmark"
+  },
+  "127": {
+    "symbol_id": "269",
+    "latex": "\\circledR"
+  },
+  "128": {
+    "symbol_id": "508",
+    "latex": "\\mathsection"
+  },
+  "129": {
+    "symbol_id": "510",
+    "latex": "\\amalg"
+  },
+  "130": {
+    "symbol_id": "511",
+    "latex": "\\cup"
+  },
+  "131": {
+    "symbol_id": "512",
+    "latex": "\\oplus"
+  },
+  "132": {
+    "symbol_id": "513",
+    "latex": "\\times"
+  },
+  "133": {
+    "symbol_id": "514",
+    "latex": "\\ast"
+  },
+  "134": {
+    "symbol_id": "517",
+    "latex": "\\triangleleft"
+  },
+  "135": {
+    "symbol_id": "520",
+    "latex": "\\otimes"
+  },
+  "136": {
+    "symbol_id": "521",
+    "latex": "\\triangleright"
+  },
+  "137": {
+    "symbol_id": "523",
+    "latex": "\\diamond"
+  },
+  "138": {
+    "symbol_id": "524",
+    "latex": "\\pm"
+  },
+  "139": {
+    "symbol_id": "526",
+    "latex": "\\div"
+  },
+  "140": {
+    "symbol_id": "527",
+    "latex": "\\bullet"
+  },
+  "141": {
+    "symbol_id": "528",
+    "latex": "\\setminus"
+  },
+  "142": {
+    "symbol_id": "529",
+    "latex": "\\uplus"
+  },
+  "143": {
+    "symbol_id": "530",
+    "latex": "\\cap"
+  },
+  "144": {
+    "symbol_id": "531",
+    "latex": "\\mp"
+  },
+  "145": {
+    "symbol_id": "532",
+    "latex": "\\sqcap"
+  },
+  "146": {
+    "symbol_id": "533",
+    "latex": "\\vee"
+  },
+  "147": {
+    "symbol_id": "534",
+    "latex": "\\odot"
+  },
+  "148": {
+    "symbol_id": "535",
+    "latex": "\\sqcup"
+  },
+  "149": {
+    "symbol_id": "536",
+    "latex": "\\wedge"
+  },
+  "150": {
+    "symbol_id": "537",
+    "latex": "\\circ"
+  },
+  "151": {
+    "symbol_id": "538",
+    "latex": "\\ominus"
+  },
+  "152": {
+    "symbol_id": "539",
+    "latex": "\\star"
+  },
+  "153": {
+    "symbol_id": "540",
+    "latex": "\\wr"
+  },
+  "154": {
+    "symbol_id": "541",
+    "latex": "\\barwedge"
+  },
+  "155": {
+    "symbol_id": "542",
+    "latex": "\\circledcirc"
+  },
+  "156": {
+    "symbol_id": "544",
+    "latex": "\\boxdot"
+  },
+  "157": {
+    "symbol_id": "549",
+    "latex": "\\ltimes"
+  },
+  "158": {
+    "symbol_id": "550",
+    "latex": "\\boxplus"
+  },
+  "159": {
+    "symbol_id": "553",
+    "latex": "\\boxtimes"
+  },
+  "160": {
+    "symbol_id": "555",
+    "latex": "\\rtimes"
+  },
+  "161": {
+    "symbol_id": "562",
+    "latex": "\\circledast"
+  },
+  "162": {
+    "symbol_id": "564",
+    "latex": "\\lhd"
+  },
+  "163": {
+    "symbol_id": "574",
+    "latex": "\\prod"
+  },
+  "164": {
+    "symbol_id": "577",
+    "latex": "\\coprod"
+  },
+  "165": {
+    "symbol_id": "582",
+    "latex": "\\oint"
+  },
+  "166": {
+    "symbol_id": "583",
+    "latex": "\\parr"
+  },
+  "167": {
+    "symbol_id": "584",
+    "latex": "\\with"
+  },
+  "168": {
+    "symbol_id": "591",
+    "latex": "\\fint"
+  },
+  "169": {
+    "symbol_id": "595",
+    "latex": "\\varoiint"
+  },
+  "170": {
+    "symbol_id": "600",
+    "latex": "\\oiint"
+  },
+  "171": {
+    "symbol_id": "601",
+    "latex": "\\approx"
+  },
+  "172": {
+    "symbol_id": "603",
+    "latex": "\\equiv"
+  },
+  "173": {
+    "symbol_id": "604",
+    "latex": "\\not\\equiv"
+  },
+  "174": {
+    "symbol_id": "605",
+    "latex": "\\perp"
+  },
+  "175": {
+    "symbol_id": "607",
+    "latex": "\\asymp"
+  },
+  "176": {
+    "symbol_id": "608",
+    "latex": "\\frown"
+  },
+  "177": {
+    "symbol_id": "609",
+    "latex": "\\prec"
+  },
+  "178": {
+    "symbol_id": "610",
+    "latex": "\\succ"
+  },
+  "179": {
+    "symbol_id": "611",
+    "latex": "\\bowtie"
+  },
+  "180": {
+    "symbol_id": "612",
+    "latex": "\\preceq"
+  },
+  "181": {
+    "symbol_id": "613",
+    "latex": "\\succeq"
+  },
+  "182": {
+    "symbol_id": "614",
+    "latex": "\\mid"
+  },
+  "183": {
+    "symbol_id": "615",
+    "latex": "\\vdash"
+  },
+  "184": {
+    "symbol_id": "616",
+    "latex": "\\dashv"
+  },
+  "185": {
+    "symbol_id": "617",
+    "latex": "\\models"
+  },
+  "186": {
+    "symbol_id": "618",
+    "latex": "\\sim"
+  },
+  "187": {
+    "symbol_id": "620",
+    "latex": "\\doteq"
+  },
+  "188": {
+    "symbol_id": "621",
+    "latex": "\\parallel"
+  },
+  "189": {
+    "symbol_id": "622",
+    "latex": "\\simeq"
+  },
+  "190": {
+    "symbol_id": "630",
+    "latex": "\\backsim"
+  },
+  "191": {
+    "symbol_id": "631",
+    "latex": "\\multimap"
+  },
+  "192": {
+    "symbol_id": "634",
+    "latex": "\\pitchfork"
+  },
+  "193": {
+    "symbol_id": "635",
+    "latex": "\\therefore"
+  },
+  "194": {
+    "symbol_id": "636",
+    "latex": "\\because"
+  },
+  "195": {
+    "symbol_id": "639",
+    "latex": "\\between"
+  },
+  "196": {
+    "symbol_id": "640",
+    "latex": "\\preccurlyeq"
+  },
+  "197": {
+    "symbol_id": "644",
+    "latex": "\\varpropto"
+  },
+  "198": {
+    "symbol_id": "647",
+    "latex": "\\Vdash"
+  },
+  "199": {
+    "symbol_id": "650",
+    "latex": "\\vDash"
+  },
+  "200": {
+    "symbol_id": "661",
+    "latex": "\\nmid"
+  },
+  "201": {
+    "symbol_id": "671",
+    "latex": "\\nvDash"
+  },
+  "202": {
+    "symbol_id": "678",
+    "latex": "\\sqsubseteq"
+  },
+  "203": {
+    "symbol_id": "679",
+    "latex": "\\nsubseteq"
+  },
+  "204": {
+    "symbol_id": "683",
+    "latex": "\\subsetneq"
+  },
+  "205": {
+    "symbol_id": "684",
+    "latex": "\\varsubsetneq"
+  },
+  "206": {
+    "symbol_id": "698",
+    "latex": "\\neq"
+  },
+  "207": {
+    "symbol_id": "711",
+    "latex": "\\geqslant"
+  },
+  "208": {
+    "symbol_id": "712",
+    "latex": "\\gtrless"
+  },
+  "209": {
+    "symbol_id": "713",
+    "latex": "\\lesssim"
+  },
+  "210": {
+    "symbol_id": "716",
+    "latex": "\\gtrsim"
+  },
+  "211": {
+    "symbol_id": "728",
+    "latex": "\\leqslant"
+  },
+  "212": {
+    "symbol_id": "739",
+    "latex": "\\trianglelefteq"
+  },
+  "213": {
+    "symbol_id": "741",
+    "latex": "\\blacktriangleright"
+  },
+  "214": {
+    "symbol_id": "743",
+    "latex": "\\triangleq"
+  },
+  "215": {
+    "symbol_id": "748",
+    "latex": "\\Downarrow"
+  },
+  "216": {
+    "symbol_id": "751",
+    "latex": "\\downarrow"
+  },
+  "217": {
+    "symbol_id": "753",
+    "latex": "\\Rightarrow"
+  },
+  "218": {
+    "symbol_id": "756",
+    "latex": "\\hookrightarrow"
+  },
+  "219": {
+    "symbol_id": "757",
+    "latex": "\\Longleftrightarrow"
+  },
+  "220": {
+    "symbol_id": "758",
+    "latex": "\\searrow"
+  },
+  "221": {
+    "symbol_id": "759",
+    "latex": "\\longmapsto"
+  },
+  "222": {
+    "symbol_id": "761",
+    "latex": "\\leftarrow"
+  },
+  "223": {
+    "symbol_id": "762",
+    "latex": "\\Longrightarrow"
+  },
+  "224": {
+    "symbol_id": "763",
+    "latex": "\\uparrow"
+  },
+  "225": {
+    "symbol_id": "764",
+    "latex": "\\Leftarrow"
+  },
+  "226": {
+    "symbol_id": "765",
+    "latex": "\\longrightarrow"
+  },
+  "227": {
+    "symbol_id": "767",
+    "latex": "\\Leftrightarrow"
+  },
+  "228": {
+    "symbol_id": "768",
+    "latex": "\\mapsto"
+  },
+  "229": {
+    "symbol_id": "770",
+    "latex": "\\leftrightarrow"
+  },
+  "230": {
+    "symbol_id": "771",
+    "latex": "\\nearrow"
+  },
+  "231": {
+    "symbol_id": "775",
+    "latex": "\\rightleftharpoons"
+  },
+  "232": {
+    "symbol_id": "777",
+    "latex": "\\rightharpoonup"
+  },
+  "233": {
+    "symbol_id": "778",
+    "latex": "\\leadsto"
+  },
+  "234": {
+    "symbol_id": "783",
+    "latex": "\\circlearrowleft"
+  },
+  "235": {
+    "symbol_id": "785",
+    "latex": "\\rightleftarrows"
+  },
+  "236": {
+    "symbol_id": "786",
+    "latex": "\\circlearrowright"
+  },
+  "237": {
+    "symbol_id": "788",
+    "latex": "\\rightrightarrows"
+  },
+  "238": {
+    "symbol_id": "791",
+    "latex": "\\rightsquigarrow"
+  },
+  "239": {
+    "symbol_id": "792",
+    "latex": "\\curvearrowright"
+  },
+  "240": {
+    "symbol_id": "801",
+    "latex": "\\twoheadrightarrow"
+  },
+  "241": {
+    "symbol_id": "809",
+    "latex": "\\nRightarrow"
+  },
+  "242": {
+    "symbol_id": "812",
+    "latex": "\\nrightarrow"
+  },
+  "243": {
+    "symbol_id": "817",
+    "latex": "\\upharpoonright"
+  },
+  "244": {
+    "symbol_id": "822",
+    "latex": "\\mapsfrom"
+  },
+  "245": {
+    "symbol_id": "823",
+    "latex": "\\shortrightarrow"
+  },
+  "246": {
+    "symbol_id": "827",
+    "latex": "\\lightning"
+  },
+  "247": {
+    "symbol_id": "837",
+    "latex": "\\vartheta"
+  },
+  "248": {
+    "symbol_id": "838",
+    "latex": "\\varpi"
+  },
+  "249": {
+    "symbol_id": "881",
+    "latex": "\\bot"
+  },
+  "250": {
+    "symbol_id": "882",
+    "latex": "\\forall"
+  },
+  "251": {
+    "symbol_id": "884",
+    "latex": "\\ni"
+  },
+  "252": {
+    "symbol_id": "885",
+    "latex": "\\top"
+  },
+  "253": {
+    "symbol_id": "886",
+    "latex": "\\ell"
+  },
+  "254": {
+    "symbol_id": "887",
+    "latex": "\\hbar"
+  },
+  "255": {
+    "symbol_id": "888",
+    "latex": "\\in"
+  },
+  "256": {
+    "symbol_id": "889",
+    "latex": "\\notin"
+  },
+  "257": {
+    "symbol_id": "890",
+    "latex": "\\wp"
+  },
+  "258": {
+    "symbol_id": "891",
+    "latex": "\\exists"
+  },
+  "259": {
+    "symbol_id": "892",
+    "latex": "\\Im"
+  },
+  "260": {
+    "symbol_id": "894",
+    "latex": "\\Re"
+  },
+  "261": {
+    "symbol_id": "901",
+    "latex": "\\nexists"
+  },
+  "262": {
+    "symbol_id": "912",
+    "latex": "\\langle"
+  },
+  "263": {
+    "symbol_id": "913",
+    "latex": "\\rangle"
+  },
+  "264": {
+    "symbol_id": "914",
+    "latex": "\\lceil"
+  },
+  "265": {
+    "symbol_id": "915",
+    "latex": "\\rceil"
+  },
+  "266": {
+    "symbol_id": "916",
+    "latex": "\\lfloor"
+  },
+  "267": {
+    "symbol_id": "917",
+    "latex": "\\rfloor"
+  },
+  "268": {
+    "symbol_id": "918",
+    "latex": "["
+  },
+  "269": {
+    "symbol_id": "919",
+    "latex": "]"
+  },
+  "270": {
+    "symbol_id": "920",
+    "latex": "|"
+  },
+  "271": {
+    "symbol_id": "921",
+    "latex": "\\|"
+  },
+  "272": {
+    "symbol_id": "922",
+    "latex": "/"
+  },
+  "273": {
+    "symbol_id": "923",
+    "latex": "\\llbracket"
+  },
+  "274": {
+    "symbol_id": "924",
+    "latex": "\\rrbracket"
+  },
+  "275": {
+    "symbol_id": "934",
+    "latex": "\\vdots"
+  },
+  "276": {
+    "symbol_id": "936",
+    "latex": "\\ddots"
+  },
+  "277": {
+    "symbol_id": "941",
+    "latex": "\\dotsc"
+  },
+  "278": {
+    "symbol_id": "943",
+    "latex": "\\aleph"
+  },
+  "279": {
+    "symbol_id": "944",
+    "latex": "\\infty"
+  },
+  "280": {
+    "symbol_id": "945",
+    "latex": "\\prime"
+  },
+  "281": {
+    "symbol_id": "946",
+    "latex": "\\angle"
+  },
+  "282": {
+    "symbol_id": "947",
+    "latex": "\\diamondsuit"
+  },
+  "283": {
+    "symbol_id": "948",
+    "latex": "\\sharp"
+  },
+  "284": {
+    "symbol_id": "949",
+    "latex": "\\backslash"
+  },
+  "285": {
+    "symbol_id": "950",
+    "latex": "\\emptyset"
+  },
+  "286": {
+    "symbol_id": "951",
+    "latex": "\\nabla"
+  },
+  "287": {
+    "symbol_id": "953",
+    "latex": "\\flat"
+  },
+  "288": {
+    "symbol_id": "956",
+    "latex": "\\clubsuit"
+  },
+  "289": {
+    "symbol_id": "957",
+    "latex": "\\heartsuit"
+  },
+  "290": {
+    "symbol_id": "958",
+    "latex": "\\neg"
+  },
+  "291": {
+    "symbol_id": "959",
+    "latex": "\\triangle"
+  },
+  "292": {
+    "symbol_id": "960",
+    "latex": "\\sqrt{}"
+  },
+  "293": {
+    "symbol_id": "965",
+    "latex": "\\sphericalangle"
+  },
+  "294": {
+    "symbol_id": "968",
+    "latex": "\\square"
+  },
+  "295": {
+    "symbol_id": "971",
+    "latex": "\\triangledown"
+  },
+  "296": {
+    "symbol_id": "972",
+    "latex": "\\blacksquare"
+  },
+  "297": {
+    "symbol_id": "973",
+    "latex": "\\lozenge"
+  },
+  "298": {
+    "symbol_id": "974",
+    "latex": "\\varnothing"
+  },
+  "299": {
+    "symbol_id": "977",
+    "latex": "\\vartriangle"
+  },
+  "300": {
+    "symbol_id": "992",
+    "latex": "\\iddots"
+  },
+  "301": {
+    "symbol_id": "993",
+    "latex": "\\mathcal{A}"
+  },
+  "302": {
+    "symbol_id": "994",
+    "latex": "\\mathcal{B}"
+  },
+  "303": {
+    "symbol_id": "995",
+    "latex": "\\mathcal{C}"
+  },
+  "304": {
+    "symbol_id": "996",
+    "latex": "\\mathcal{D}"
+  },
+  "305": {
+    "symbol_id": "997",
+    "latex": "\\mathcal{E}"
+  },
+  "306": {
+    "symbol_id": "998",
+    "latex": "\\mathcal{F}"
+  },
+  "307": {
+    "symbol_id": "999",
+    "latex": "\\mathcal{G}"
+  },
+  "308": {
+    "symbol_id": "1000",
+    "latex": "\\mathcal{H}"
+  },
+  "309": {
+    "symbol_id": "1004",
+    "latex": "\\mathcal{L}"
+  },
+  "310": {
+    "symbol_id": "1005",
+    "latex": "\\mathcal{M}"
+  },
+  "311": {
+    "symbol_id": "1006",
+    "latex": "\\mathcal{N}"
+  },
+  "312": {
+    "symbol_id": "1007",
+    "latex": "\\mathcal{O}"
+  },
+  "313": {
+    "symbol_id": "1008",
+    "latex": "\\mathcal{P}"
+  },
+  "314": {
+    "symbol_id": "1010",
+    "latex": "\\mathcal{R}"
+  },
+  "315": {
+    "symbol_id": "1011",
+    "latex": "\\mathcal{S}"
+  },
+  "316": {
+    "symbol_id": "1012",
+    "latex": "\\mathcal{T}"
+  },
+  "317": {
+    "symbol_id": "1013",
+    "latex": "\\mathcal{U}"
+  },
+  "318": {
+    "symbol_id": "1016",
+    "latex": "\\mathcal{X}"
+  },
+  "319": {
+    "symbol_id": "1018",
+    "latex": "\\mathcal{Z}"
+  },
+  "320": {
+    "symbol_id": "1019",
+    "latex": "\\mathfrak{A}"
+  },
+  "321": {
+    "symbol_id": "1031",
+    "latex": "\\mathfrak{M}"
+  },
+  "322": {
+    "symbol_id": "1037",
+    "latex": "\\mathfrak{S}"
+  },
+  "323": {
+    "symbol_id": "1042",
+    "latex": "\\mathfrak{X}"
+  },
+  "324": {
+    "symbol_id": "1045",
+    "latex": "\\mathbb{1}"
+  },
+  "325": {
+    "symbol_id": "1046",
+    "latex": "\\mathds{1}"
+  },
+  "326": {
+    "symbol_id": "1051",
+    "latex": "\\mathds{C}"
+  },
+  "327": {
+    "symbol_id": "1053",
+    "latex": "\\mathds{E}"
+  },
+  "328": {
+    "symbol_id": "1062",
+    "latex": "\\mathds{N}"
+  },
+  "329": {
+    "symbol_id": "1064",
+    "latex": "\\mathds{P}"
+  },
+  "330": {
+    "symbol_id": "1065",
+    "latex": "\\mathds{Q}"
+  },
+  "331": {
+    "symbol_id": "1066",
+    "latex": "\\mathds{R}"
+  },
+  "332": {
+    "symbol_id": "1074",
+    "latex": "\\mathds{Z}"
+  },
+  "333": {
+    "symbol_id": "1075",
+    "latex": "\\mathscr{A}"
+  },
+  "334": {
+    "symbol_id": "1077",
+    "latex": "\\mathscr{C}"
+  },
+  "335": {
+    "symbol_id": "1078",
+    "latex": "\\mathscr{D}"
+  },
+  "336": {
+    "symbol_id": "1079",
+    "latex": "\\mathscr{E}"
+  },
+  "337": {
+    "symbol_id": "1080",
+    "latex": "\\mathscr{F}"
+  },
+  "338": {
+    "symbol_id": "1082",
+    "latex": "\\mathscr{H}"
+  },
+  "339": {
+    "symbol_id": "1086",
+    "latex": "\\mathscr{L}"
+  },
+  "340": {
+    "symbol_id": "1090",
+    "latex": "\\mathscr{P}"
+  },
+  "341": {
+    "symbol_id": "1093",
+    "latex": "\\mathscr{S}"
+  },
+  "342": {
+    "symbol_id": "1101",
+    "latex": "\\celsius"
+  },
+  "343": {
+    "symbol_id": "1102",
+    "latex": "\\degree"
+  },
+  "344": {
+    "symbol_id": "1103",
+    "latex": "\\ohm"
+  },
+  "345": {
+    "symbol_id": "1111",
+    "latex": "\\venus"
+  },
+  "346": {
+    "symbol_id": "1112",
+    "latex": "\\mars"
+  },
+  "347": {
+    "symbol_id": "1115",
+    "latex": "\\astrosun"
+  },
+  "348": {
+    "symbol_id": "1116",
+    "latex": "\\fullmoon"
+  },
+  "349": {
+    "symbol_id": "1117",
+    "latex": "\\leftmoon"
+  },
+  "350": {
+    "symbol_id": "1168",
+    "latex": "\\female"
+  },
+  "351": {
+    "symbol_id": "1169",
+    "latex": "\\male"
+  },
+  "352": {
+    "symbol_id": "1177",
+    "latex": "\\checked"
+  },
+  "353": {
+    "symbol_id": "1184",
+    "latex": "\\diameter"
+  },
+  "354": {
+    "symbol_id": "1185",
+    "latex": "\\sun"
+  },
+  "355": {
+    "symbol_id": "1187",
+    "latex": "\\Bowtie"
+  },
+  "356": {
+    "symbol_id": "1314",
+    "latex": "\\mathbb{Q}"
+  },
+  "357": {
+    "symbol_id": "1315",
+    "latex": "\\mathbb{N}"
+  },
+  "358": {
+    "symbol_id": "1316",
+    "latex": "\\mathbb{Z}"
+  },
+  "359": {
+    "symbol_id": "1317",
+    "latex": "\\mathbb{H}"
+  },
+  "360": {
+    "symbol_id": "1369",
+    "latex": "\\ss"
+  },
+  "361": {
+    "symbol_id": "1371",
+    "latex": "\\aa"
+  },
+  "362": {
+    "symbol_id": "1374",
+    "latex": "\\L"
+  },
+  "363": {
+    "symbol_id": "1382",
+    "latex": "\\AA"
+  },
+  "364": {
+    "symbol_id": "1385",
+    "latex": "\\O"
+  },
+  "365": {
+    "symbol_id": "1394",
+    "latex": "\\o"
+  },
+  "366": {
+    "symbol_id": "1395",
+    "latex": "\\ae"
+  },
+  "367": {
+    "symbol_id": "1396",
+    "latex": "\\AE"
+  },
+  "368": {
+    "symbol_id": "1400",
+    "latex": "\\guillemotleft"
+  }
+}
