@@ -216,14 +216,29 @@ Cada bloque convolucional duplica el número de filtros respecto al anterior, y 
 
 ---
 
-## Sobre el dataset
+## Atribución y dataset
 
-El dataset HASYv2 fue creado por [Martin Thoma](https://martin-thoma.com/) y contiene 168.236 imágenes de símbolos manuscritos distribuidas en 369 clases. Cada imagen es un PNG de 32×32 píxeles en escala de grises.
+Este proyecto utiliza el dataset **HASYv2** (Handwritten Symbol database), creado y mantenido por **Martin Thoma**.
 
-Para más detalles sobre el dataset: [paper original](https://arxiv.org/abs/1701.08380) | [repositorio](https://github.com/MartinThoma/HASY)
+- **Paper**: [The HASYv2 dataset](https://arxiv.org/abs/1701.08380) (arXiv:1701.08380)
+- **Dataset**: [zenodo.org/records/259444](https://zenodo.org/records/259444)
+- **Repositorio original**: [github.com/MartinThoma/HASY](https://github.com/MartinThoma/HASY)
+- **DOI**: [10.5281/zenodo.259444](https://doi.org/10.5281/zenodo.259444)
+
+El archivo `hasy_tools.py` incluido en este repositorio también es obra de Martin Thoma y forma parte del paquete original del dataset.
+
+### Cita
+
+Si usas este dataset en un trabajo académico, la referencia recomendada es:
+
+```
+Thoma, Martin. "The HASYv2 dataset." arXiv preprint arXiv:1701.08380 (2017).
+```
 
 ---
 
 ## Licencia
 
-El dataset HASYv2 se distribuye bajo su propia licencia (ver el paper original). El código de este proyecto es de uso libre.
+El dataset HASYv2 se distribuye bajo la licencia [ODbL 1.0 (Open Data Commons Open Database License)](http://www.opendatacommons.org/licenses/odbl/1.0/). Esto permite usarlo libremente (incluidos fines comerciales), siempre que se dé atribución al autor original y cualquier redistribución de la base de datos se mantenga bajo la misma licencia.
+
+El código propio de este proyecto (scripts de entrenamiento, frontend Streamlit, estilos CSS) es de uso libre.
